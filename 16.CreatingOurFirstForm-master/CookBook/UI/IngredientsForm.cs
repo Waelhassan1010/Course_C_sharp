@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CookBook.UI
 {
@@ -15,6 +16,16 @@ namespace CookBook.UI
         public IngredientsForm()
         {
             InitializeComponent();
+        }
+
+        private void AddTofridgeBtn_Click(object sender, EventArgs e)
+        {
+            string message = NametextBox.Text
+                + "\n " + TypeTextBox.Text
+                + "\n " + WeightNum.Value
+                + "\n " + KcalPer100gNum.Value
+                + "\n " + PricePer100gNum.Value;
+            MessageBox.Show(message);
         }
     }
 }
