@@ -20,11 +20,18 @@ namespace CookBook.UI
 
         private void AddTofridgeBtn_Click(object sender, EventArgs e)
         {
-            string message = NametextBox.Text
-                + "\n " + TypeTextBox.Text
-                + "\n " + WeightNum.Value
-                + "\n " + KcalPer100gNum.Value
-                + "\n " + PricePer100gNum.Value;
+            //string message = NametextBox.Text
+            //    + "\n " + TypeTextBox.Text
+            //    + "\n " + WeightNum.Value
+            //    + "\n " + KcalPer100gNum.Value
+            //    + "\n " + PricePer100gNum.Value;
+
+            string message= $@"
+             {NametextBox.Text}
+             {TypeTextBox.Text}
+             {WeightNum.Value}
+             {KcalPer100gNum.Value}
+             {PricePer100gNum.Value}";
             MessageBox.Show(message);
         }
     }
