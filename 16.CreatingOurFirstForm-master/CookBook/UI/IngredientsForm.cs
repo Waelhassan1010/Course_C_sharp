@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 using DomainModel.Models;
 
 namespace CookBook.UI
@@ -19,27 +18,23 @@ namespace CookBook.UI
             InitializeComponent();
         }
 
-        private void AddTofridgeBtn_Click(object sender, EventArgs e)
+        private void AddToFridgeBtn_Click(object sender, EventArgs e)
         {
             List<Ingredient> ingredients = new List<Ingredient>();
-            Ingredient i1 = new Ingredient { Name = "apple", Type = "Fruit", Weight = 100, KcalPer100g = 324, PricePer100g = 312 };
-            Ingredient i2 = new Ingredient { Name = "bananan", Type = "Fruit", Weight = 150, KcalPer100g = 500, PricePer100g = 312 };
-            Ingredient i3 = new Ingredient { Name = "pinaple", Type = "Fruit", Weight = 200, KcalPer100g = 400, PricePer100g = 312 };
 
+            Ingredient i1 = new Ingredient { Name = "apple", Type = "fruit", Weight = 500, KcalPer100g = 50, PricePer100g = 5.4m };
+            Ingredient i2 = new Ingredient { Name = "banana", Type = "fruit", Weight = 500, KcalPer100g = 90.1m, PricePer100g = 0.4m };
+            Ingredient i3 = new Ingredient { Name = "orange", Type = "fruit", Weight = 500, KcalPer100g = 40, PricePer100g = 3 };
 
             ingredients.Add(i1);
             ingredients.Add(i2);
             ingredients.Add(i3);
-            string message = " ";
-            //foreach (Ingredient INg1 in ingredients)
-            //{
-            //    message += $@" 
-            //{INg1.Name} {INg1.Type} {INg1.Weight} {INg1.KcalPer100g} {INg1.PricePer100g}";
 
+            string message = "";
 
-            //}
-            ingredients.ForEach(INg1 => { message += $@" 
-            {INg1.Name} {INg1.Type} {INg1.Weight} {INg1.KcalPer100g} {INg1.PricePer100g}"; });
+            ingredients.ForEach(i => { message += $@"
+            {i.Name} {i.Type} {i.Weight} {i.KcalPer100g} {i.PricePer100g}"; });
+
             MessageBox.Show(message);
         }
     }
